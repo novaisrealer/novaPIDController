@@ -58,10 +58,10 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopInit() {
-  PIDLeft1.SetP(0.01);
-  PIDLeft2.SetP(0.01);
-  PIDRight1.SetP(0.01);
-  PIDRight2.SetP(0.01);
+  PIDLeft1.SetP(0.1);
+  PIDLeft2.SetP(0.1);
+  PIDRight1.SetP(0.1);
+  PIDRight2.SetP(0.1);
 }
 
 void Robot::TeleopPeriodic() {

@@ -31,14 +31,18 @@ class Robot : public frc::TimedRobot {
   const std::string kAutoNameDefault = "Default";
   const std::string kAutoNameCustom = "My Auto";
   std::string m_autoSelected;
-
+  // Controller defined as m_xbox
   frc::XboxController m_xbox{0};
-  rev::CANSparkMax samSmithLeft1{1, rev::CANSparkMaxLowLevel::MotorType::kBrushless};
-  rev::CANSparkMax samSmithLeft2{2, rev::CANSparkMaxLowLevel::MotorType::kBrushless};
-  rev::CANSparkMax samSmithRight1{3, rev::CANSparkMaxLowLevel::MotorType::kBrushless};
-  rev::CANSparkMax samSmithRight2{4, rev::CANSparkMaxLowLevel::MotorType::kBrushless};
-
-  rev::SparkMaxPIDController samSmithPIDLeft{samSmithLeft1.GetPIDController()};
+  // Motors defined. 2 on the left and 2 on the right
+  rev::CANSparkMax mLeft1{1, rev::CANSparkMaxLowLevel::MotorType::kBrushless};
+  rev::CANSparkMax mLeft2{2, rev::CANSparkMaxLowLevel::MotorType::kBrushless};
+  rev::CANSparkMax mRight1{3, rev::CANSparkMaxLowLevel::MotorType::kBrushless};
+  rev::CANSparkMax mRight2{4, rev::CANSparkMaxLowLevel::MotorType::kBrushless};
+  // PID controllers defined for all four motors
+  rev::SparkMaxPIDController PIDLeft1{mLeft1.GetPIDController()};
+  rev::SparkMaxPIDController PIDLeft2{mLeft2.GetPIDController()};
+  rev::SparkMaxPIDController PIDRight1{mRight1.GetPIDController()};
+  rev::SparkMaxPIDController PIDRight2{mRight2.GetPIDController()};
 
 
 };

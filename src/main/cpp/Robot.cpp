@@ -58,16 +58,18 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopInit() {
-  samSmithPIDLeft.SetP(0.01);
+  PIDLeft1.SetP(0.01);
+  PIDLeft2.SetP(0.01);
+  PIDRight1.SetP(0.01);
+  PIDRight2.SetP(0.01);
 }
 
 void Robot::TeleopPeriodic() {
-  samSmithPIDLeft.SetReference( m_xbox.GetLeftX(), rev::ControlType::kPosition);
-
-  //samSmithLeft1.Set(0.5);
-  //samSmithLeft2.Set(0.5);
-  //samSmithRight1.Set(0.2);
-  //samSmithRight2.Set(0.2);
+  
+  PIDLeft1.SetReference(m_xbox.GetLeftX(), rev::ControlType::kPosition);
+  PIDLeft2.SetReference(m_xbox.GetLeftX(), rev::ControlType::kPosition);
+  PIDRight1.SetReference(m_xbox.GetRightX(), rev::ControlType::kPosition);
+  PIDRight2.SetReference(m_xbox.GetRightX(), rev::ControlType::kPosition);
   
 }
 

@@ -5,7 +5,6 @@
 #include "Robot.h"
 
 #include <fmt/core.h>
-#include <frc/Joystick.h>
 #include <frc/smartdashboard/SmartDashboard.h>
 
 
@@ -58,18 +57,18 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopInit() {
-  PIDLeft1.SetP(0.1);
-  PIDLeft2.SetP(0.1);
-  PIDRight1.SetP(0.1);
-  PIDRight2.SetP(0.1);
+  PIDLeft1.SetP(0.01);
+  PIDLeft2.SetP(0.01);
+  PIDRight1.SetP(0.01);
+  PIDRight2.SetP(0.01);
 }
 
 void Robot::TeleopPeriodic() {
   
-  PIDLeft1.SetReference(m_xbox.GetLeftX(), rev::ControlType::kPosition);
-  PIDLeft2.SetReference(m_xbox.GetLeftX(), rev::ControlType::kPosition);
-  PIDRight1.SetReference(m_xbox.GetRightX(), rev::ControlType::kPosition);
-  PIDRight2.SetReference(m_xbox.GetRightX(), rev::ControlType::kPosition);
+  PIDLeft1.SetReference(m_xbox.GetLeftX() *7, rev::ControlType::kPosition);
+  PIDLeft2.SetReference(m_xbox.GetLeftX() *7, rev::ControlType::kPosition);
+  PIDRight1.SetReference(m_xbox.GetRightX() *7, rev::ControlType::kPosition);
+  PIDRight2.SetReference(m_xbox.GetRightX() *7, rev::ControlType::kPosition);
   
 }
 

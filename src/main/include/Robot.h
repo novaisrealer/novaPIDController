@@ -43,6 +43,5 @@ class Robot : public frc::TimedRobot {
   rev::SparkMaxPIDController PIDLeft2{mLeft2.GetPIDController()};
   rev::SparkMaxPIDController PIDRight1{mRight1.GetPIDController()};
   rev::SparkMaxPIDController PIDRight2{mRight2.GetPIDController()};
-
-
+  
 };

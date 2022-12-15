@@ -65,10 +65,10 @@ void Robot::TeleopInit() {
 
 void Robot::TeleopPeriodic() {
   
-  PIDLeft1.SetReference(m_xbox.GetLeftX() *7, rev::ControlType::kPosition);
-  PIDLeft2.SetReference(m_xbox.GetLeftX() *7, rev::ControlType::kPosition);
-  PIDRight1.SetReference(m_xbox.GetRightX() *7, rev::ControlType::kPosition);
-  PIDRight2.SetReference(m_xbox.GetRightX() *7, rev::ControlType::kPosition);
+  PIDLeft1.SetReference(m_xbox.GetLeftX() *7, rev::ControlType::kVelocity);
+  PIDLeft2.SetReference(m_xbox.GetLeftX() *7, rev::ControlType::kVelocity);
+  PIDRight1.SetReference(m_xbox.GetRightX() *7, rev::ControlType::kVelocity);
+  PIDRight2.SetReference(m_xbox.GetRightX() *7, rev::ControlType::kVelocity);
   
 }
 
